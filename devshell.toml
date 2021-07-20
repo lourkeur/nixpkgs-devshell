@@ -1,0 +1,41 @@
+imports = [ "git.hooks" ]
+
+[devshell]
+name = "nixpkgs"
+
+[[commands]]
+package = "git-aggregator"
+
+[[commands]]
+package = "nixpkgs-fmt"
+category = "formatters"
+
+[[commands]]
+package = "nixpkgs-review"
+category = "linters"
+
+[[commands]]
+package = "nixpkgs-hammering"
+category = "linters"
+
+[git.hooks]
+enable = true
+pre-commit.text = '''
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+  against=HEAD
+else
+  # Initial commit: diff against an empty tree object
+  against=$(git hash-object -t tree /dev/null)
+fi
+
+function find_all_files {
+  git diff-index --name-only --cached $against --diff-filter d "$@"
+}
+function find_nix_files {
+  find_all_files -- '*.nix'
+}
+
+# Check if staged nix files are formatted.
+find_nix_files | xargs -r nixpkgs-fmt --check
+'''

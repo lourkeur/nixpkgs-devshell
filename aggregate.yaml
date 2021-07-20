@@ -1,0 +1,10 @@
+./master:
+        remotes:
+                upstream: https://github.com/NixOS/nixpkgs
+                lourkeur: ssh://github.com/lourkeur/nixpkgs
+        merges:
+                - upstream master
+                - upstream refs/pull/127066/head # lib/options: Warn about options without type
+                - upstream refs/pull/130273/head # tor-browser: 10.0.18 -> 10.5.2
+                - upstream refs/pull/130671/head # brave: 1.26.74 -> 1.26.77
+        target: lourkeur master
