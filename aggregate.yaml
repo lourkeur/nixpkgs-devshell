@@ -4,7 +4,6 @@
                 lourkeur: ssh://github.com/lourkeur/nixpkgs
         merges:
                 - upstream master
-                - upstream refs/pull/127066/head # lib/options: Warn about options without type
-                - upstream refs/pull/130273/head # tor-browser: 10.0.18 -> 10.5.2
-                - upstream refs/pull/130671/head # brave: 1.26.74 -> 1.26.77
+                - upstream refs/pull/135892/head  # chia: 1.2.3 -> 1.2.5
+                - upstream refs/pull/136402/head  # mesa: restore OpenCL support
         target: lourkeur master
