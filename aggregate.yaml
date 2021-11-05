@@ -4,6 +4,7 @@
                 lourkeur: ssh://github.com/lourkeur/nixpkgs
         merges:
                 - upstream master
-                - upstream refs/pull/135892/head  # chia: 1.2.3 -> 1.2.5
-                - upstream refs/pull/136402/head  # mesa: restore OpenCL support
+                - upstream refs/pull/144197/head  # nix: 2.4
+                - upstream refs/pull/144733/head  # chia 1.2.11
+                - lourkeur disable-sage-tests
         target: lourkeur master
