@@ -4,8 +4,5 @@
                 lourkeur: ssh://github.com/lourkeur/nixpkgs
         merges:
                 - upstream master
-                - upstream refs/pull/144197/head  # nix: 2.4
-                - upstream refs/pull/144733/head  # chia 1.2.11
-                - upstream refs/pull/145208/head  # tor-browser 11.0
                 - lourkeur disable-sage-tests
         target: lourkeur master
