@@ -4,9 +4,6 @@ imports = [ "git.hooks" ]
 name = "nixpkgs"
 
 [[commands]]
-package = "git-aggregator"
-
-[[commands]]
 package = "nixpkgs-fmt"
 category = "formatters"
 

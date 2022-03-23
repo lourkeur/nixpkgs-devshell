@@ -1,8 +1,0 @@
-./master:
-        remotes:
-                upstream: https://github.com/NixOS/nixpkgs
-                lourkeur: ssh://github.com/lourkeur/nixpkgs
-        merges:
-                - upstream master
-                - lourkeur disable-sage-tests
-        target: lourkeur master
